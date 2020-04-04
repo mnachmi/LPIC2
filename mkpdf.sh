@@ -1,0 +1,12 @@
+pandoc \
+    --variable mainfont="DejaVu Sans" \
+    --variable monofont="DejaVu Sans Mono" \
+    --variable fontsize=10pt \
+    --variable geometry:"top=1.5cm, bottom=2.5cm, left=2cm, right=2cm" \
+    --variable geometry:a4paper \
+    --table-of-contents \
+    --number-sections \
+    -f markdown  "$1".md \
+    --pdf-engine=xelatex \
+    -c buttondown.css --self-contained \
+    -o "$1".pdf
